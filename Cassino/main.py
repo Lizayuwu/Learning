@@ -7,7 +7,7 @@ suits = ["of Spades","of Hearts", "of Diamonds", "of Clubs"]
 value = {"a" : 1,
          "queen" : 10,
          "king" : 10,
-         "Jack" : 10,
+         "jack" : 10,
          "2" : 2,
          "3" : 3,
          "4" : 4,
@@ -30,6 +30,7 @@ class Cassino:
 
     def __str__(self):
         return f"{self.tables}"
+
     def __repr__(self):
         return super().__repr__()
 
@@ -122,10 +123,13 @@ class Dealer:
 
 def getBlackjackHandValue(hand):
     blackjackValue = dict(value)
+    # print(f"hand is: {hand}")
     strippedHand = [card.split()[0].lower() for card in hand]
+    # print(f"strippedHand is: {strippedHand}")
     if ('a' and 'queen' or 'king' or 'jack') in strippedHand:
         blackjackValue['a'] = 11
     handValue = list(map(lambda x: blackjackValue.get(x), strippedHand ))
+    # print(f"hand value: {handValue}")
     return sum(handValue)
 
 def blackjack(table):
@@ -141,25 +145,24 @@ def blackjack(table):
                 dealer.deal(player, 2)
                 startingCardsWereDealt = True
         for player in players:
-            while(True):
-                if player.willPlayThisTurn:
-                    print(f"{player.name}, Select your action:\n\tHit\n\tStop\nyour hand is {player.hand}\t worth {getBlackjackHandValue(player.hand)}")
-                    action = input()
-                    if action.lower() == "hit":
-                        dealer.deal(player, 1)
-                    elif action.lower() == "stop":
-                        player.willPlayThisTurn = False
-                        break
-                    elif action.lower() == "stand":
-                        isPlaying = False
-                    else:
-                        continue
+            while(player.willPlayThisTurn):
+                print(f"{player.name}, Select your action:\n\tHit\n\tStop\nyour hand is {player.hand}  worth {getBlackjackHandValue(player.hand)}")
+                action = input()
+                if action.lower() == "hit":
+                    dealer.deal(player, 1)
+                elif action.lower() == "stop":
+                    player.willPlayThisTurn = False
+                    break
+                elif action.lower() == "stand": # debug
+                    isPlaying = False
+                else:
+                    continue
                 if getBlackjackHandValue(player.hand) == 21:
+                    player.willPlayThisTurn = False
                     isPlaying = False
                     print(f"{player.name} won with the hand {player.hand}")
-                    break
                 elif getBlackjackHandValue(player.hand) > 21:
-                    player.willPlayThisTurn = False
+                    player.willPlayThisTurn = False 
                     print(f"{player.name} lost with a {getBlackjackHandValue(player.hand)} hand value")
 
 cassino = Cassino()
