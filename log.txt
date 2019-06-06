@@ -1,0 +1,29 @@
+traceroute to nicovideo.jp (133.152.43.29), 30 hops max, 60 byte packets
+ 1  _gateway (192.168.43.1)  48.602 ms  58.776 ms  58.756 ms
+ 2  192.168.58.1 (192.168.58.1)  112.275 ms  112.261 ms  118.902 ms
+ 3  cpu254.ifc-camboriu.edu.br (191.52.15.254)  128.519 ms  146.809 ms  151.256 ms
+ 4  ifc-camboriu-interno-204-9.wan.pop-sc.rnp.br (200.237.204.9)  151.271 ms  151.703 ms  151.796 ms
+ 5  * popsc-ifc-camboriu-brd-3703.wan.pop-sc.rnp.br (200.237.197.113)  151.891 ms  151.877 ms
+ 6  popsc-4042-rt21.bb.pop-sc.rnp.br (200.237.194.197)  152.464 ms  101.596 ms  94.026 ms
+ 7  sc-lansc-rt21.bkb.rnp.br (200.143.253.109)  93.970 ms  38.941 ms *
+ 8  sp-sc-oi.bkb.rnp.br (200.143.252.65)  33.816 ms  38.773 ms  35.433 ms
+ 9  mia2-sp-par-pac.bkb.rnp.br (200.143.252.34)  137.481 ms  137.500 ms  137.302 ms
+10  xe-0-0-26-2.a01.miamfl02.us.bb.gin.ntt.net (129.250.202.93)  137.335 ms  137.276 ms  137.305 ms
+11  * ae-5.r04.miamfl02.us.bb.gin.ntt.net (129.250.3.209)  207.960 ms  207.867 ms
+12  ae-0.r21.miamfl02.us.bb.gin.ntt.net (129.250.4.20)  203.773 ms  202.650 ms ae-1.r21.miamfl02.us.bb.gin.ntt.net (129.250.4.88)  202.537 ms
+13  ae-4.r22.dllstx09.us.bb.gin.ntt.net (129.250.2.219)  189.426 ms  176.285 ms  221.065 ms
+14  ae-5.r22.lsanca07.us.bb.gin.ntt.net (129.250.7.69)  257.172 ms  257.272 ms  252.062 ms
+15  ae-15.r00.lsanca20.us.bb.gin.ntt.net (129.250.6.47)  252.525 ms  254.508 ms  202.452 ms
+16  ae-0.a01.lsanca20.us.bb.gin.ntt.net (129.250.2.212)  189.107 ms  192.922 ms ae-1.a00.lsanca20.us.bb.gin.ntt.net (129.250.2.252)  202.410 ms
+17  ae-0.iij.lsanca20.us.bb.gin.ntt.net (168.143.229.26)  206.355 ms ae-1.iij.lsanca20.us.bb.gin.ntt.net (168.143.229.30)  211.142 ms  223.594 ms
+18  tky001bb10.IIJ.Net (58.138.88.145)  349.524 ms tky001bb11.IIJ.Net (58.138.88.157)  349.521 ms  336.443 ms
+19  tky001ip58.IIJ.Net (58.138.102.234)  306.652 ms tky001ip58.IIJ.Net (58.138.102.238)  333.319 ms tky001ip58.IIJ.Net (58.138.102.234)  308.592 ms
+20  210.138.107.22 (210.138.107.22)  304.110 ms 210.138.107.26 (210.138.107.26)  336.452 ms 210.138.107.22 (210.138.107.22)  306.680 ms
+21  133.152.13.18 (133.152.13.18)  318.030 ms  317.013 ms 133.152.13.10 (133.152.13.10)  336.064 ms
+22  133.152.13.70 (133.152.13.70)  299.398 ms  306.919 ms 133.152.13.66 (133.152.13.66)  353.971 ms
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  *
