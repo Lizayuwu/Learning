@@ -1,3 +1,16 @@
+
+
+! function fastCreate() {
+	main = document.querySelector("main")
+	time = document.querySelector(".time")
+	date = new Date()
+	hour = date.getHours()
+	minutes = date.getMinutes()
+	seconds = date.getSeconds()
+	time.innerText = `${hour.toString().length == 1 ? "0" + hour.toString() : hour}:${minutes.toString().length == 1 ? "0" + minutes.toString() : minutes }:${seconds.toString().length == 1 ? "0" + seconds.toString() : seconds}`
+	main.style.backgroundColor = getRandomColor('hex')
+}();
+
 ! function create(){ 
 	main = document.querySelector("main")
 	time = document.querySelector(".time")
@@ -9,7 +22,7 @@
 		time.innerText = `${hour.toString().length == 1 ? "0" + hour.toString() : hour}:${minutes.toString().length == 1 ? "0" + minutes.toString() : minutes }:${seconds.toString().length == 1 ? "0" + seconds.toString() : seconds}`
 		main.style.backgroundColor = getRandomColor('hex')
 	}, 1000)
-} ()
+} ();
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);

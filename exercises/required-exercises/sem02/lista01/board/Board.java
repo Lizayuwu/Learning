@@ -27,7 +27,7 @@ public class Board {
 
     public void remove(int x,int y) {
         try {
-            this.board[x][y] = 0;
+            this.board[x-1][y-1] = 0;
         } catch(Exception ex) {
             ex.printStackTrace();
         }
