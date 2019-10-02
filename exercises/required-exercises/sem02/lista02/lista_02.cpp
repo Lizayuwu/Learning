@@ -2,16 +2,34 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+// char* convertToNotation(int number) {
 
-    return 0;
-}
+// }
 
 void ex01() {
-    unsigned int addresses;
-    unsigned int addressBitSize;
+    unsigned long long addresses;
+    unsigned long long addressBitSize;
+    unsigned long long memorySize;
 
-    printf("How many adresses does your computer have");
+    try
+    {
+        printf("How many addresses does your computer have.\n");
+        scanf("%Ld", &addresses);
+        
+        printf("Tell me the computer's cell size are.\n");
+        scanf("%Ld", &addressBitSize);
+
+    }
+    catch(const std::exception & e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+
+
+        
+    printf("The memory can store: %d\n", addresses * addressBitSize);
+
     printf("Starting exercise exercise 01:\n");
 
     return;    
@@ -35,6 +53,12 @@ void ex04() {
     return;    
 }
 
-char* convertToNotation(int number) {
 
+int main() {
+    ex01();
+    ex02();
+    ex03();
+    ex04();
+    return 0;
 }
+
