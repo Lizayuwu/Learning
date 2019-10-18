@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #define true 1
 #define false 0
 #define bool int
@@ -15,10 +16,9 @@ char* convertToNotation(float number) {
             numSize++;
         } else {
             done = true;
-            printf("%.3f %s \n",number, notations[numSize] );
+            printf("%.3f %s",number, notations[numSize] );
         }
     }
-    // return notations[numSize];
 }
     
 void ex01() {
@@ -37,9 +37,10 @@ void ex01() {
     memorySize = addresses * addressBitSize;
 
     // printf("%lld %s\n",memorySize, convertToNotation(memorySize));
+    printf("the memory has a capacity of: ");
     convertToNotation(memorySize);
-
-
+    printf("\n");
+    printf("The REM size is: %.0LF\n B", log2l(memorySize));
     return;    
 }
 
