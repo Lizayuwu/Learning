@@ -17,7 +17,6 @@ char* convertToNotation(float number, int type) {
             number /= 1024;
             numSize++;
         } else {
-            done = true;
             printf("%.3f %s",number, type == 1 ? notations[numSize] : notationsAlt[numSize] );
         }
     }
@@ -125,19 +124,15 @@ int main() {
                 return 1;
             case 1:
                 ex01();
-                done = true;
                 break;
             case 2:
                 ex02();
-                done = true;
                 break;
             case 3:
                 ex03();
-                done = true;
                 break;
             case 4:
                 ex04();
-                done = true;
                 break;
             default:
                 printf("Esse exercicio não existe.\n");
