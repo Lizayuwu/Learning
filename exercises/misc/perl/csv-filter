@@ -3,16 +3,18 @@
 use v5.22;
 use warnings;
 
-my $count = 0;
+my %histograma;
 
 while(<>) {
 	chomp;
 
 	my @col = split(/;/, $_ );
-	if( $col[2] =~ /Ministério/ ) {
-		$count++;
-	}
+	
+	$histograma{"$col[9]"}++
 }
 
-say "Ministério aparece $count vezes";
+my @keys = keys %histograma;
 
+foreach(sort @keys) {
+	say "$_ $histograma{$_}";
+}
