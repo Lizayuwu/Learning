@@ -3,4 +3,6 @@
 use strict;
 use warnings;
 
-print "Hello, World\n";
+my $name = "Yui";
+
+print "Hello ", $name , "\n";

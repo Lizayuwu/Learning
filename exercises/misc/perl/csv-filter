@@ -1,0 +1,18 @@
+#! /usr/bin/perl
+
+use v5.22;
+use warnings;
+
+my $count = 0;
+
+while(<>) {
+	chomp;
+
+	my @col = split(/;/, $_ );
+	if( $col[2] =~ /Ministério/ ) {
+		$count++;
+	}
+}
+
+say "Ministério aparece $count vezes";
+
