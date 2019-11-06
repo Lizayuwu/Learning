@@ -1,0 +1,20 @@
+#! /usr/bin/perl
+
+use v5.22;
+use warnings;
+
+my %histograma;
+
+while(<>) {
+	chomp;
+
+	my @col = split(/;/, $_ );
+	
+	$histograma{"$col[9]"}++
+}
+
+my @keys = keys %histograma;
+
+foreach(sort @keys) {
+	say "$_ $histograma{$_}";
+}
