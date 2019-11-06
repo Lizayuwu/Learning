@@ -2,9 +2,5 @@
 *.exe
 *.class
 *.o
-<<<<<<< HEAD
 *.swap
 *.out
-=======
-*.csv
->>>>>>> 73f65d1a7be1ddf2381062b448325cc75f327618
