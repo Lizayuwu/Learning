@@ -11,17 +11,14 @@ void ex01() {
     unsigned long long addressBitSize;
     unsigned long long memorySize;
 
-    try
-    {
+    try {
         printf("How many addresses does your computer have.\n");
         scanf("%Ld", &addresses);
         
         printf("Tell me the computer's cell size are.\n");
         scanf("%Ld", &addressBitSize);
 
-    }
-    catch(const std::exception & e)
-    {
+    } catch(const std::exception & e) {
         std::cerr << e.what() << '\n';
     }
     
