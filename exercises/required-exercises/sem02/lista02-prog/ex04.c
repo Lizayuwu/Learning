@@ -1,28 +1,27 @@
 #include <stdio.h>
 
 int main() {
-    int r = 8;
-    int c = 8;
+    int r = 2;
+    int c = 2;
     int i;
     int j;
-    int num;
-    int board[r][c];
-    int hasSymmetry = 1;
+    int num = 0;
+    int board[2][2];
     for (i = 0; i < r; i++) {
         for (j = 0; j < c; j++) {
-            board[i][j] = scanf("%d", &num); // limited to 1..99 for testing
+            scanf("%d", &board[i][j]);
         }
     }
 
     for (i = 0; i < r; i++) {
         for (j = 0; j < c; j++) {
+            printf("%d == %d\t %d %d\n", board[i][j], board[j][i], i, j);
             if (!(board[i][j] == board[j][i])) {
                 printf("the array is not symmetric");
                 return 0;
             }
         }
     }
-    
 
     printf("the array is symmetric\n");
     return 0;

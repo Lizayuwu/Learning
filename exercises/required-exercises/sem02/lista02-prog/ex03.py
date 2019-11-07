@@ -3,7 +3,6 @@ arr = [[random.randint(0,255) for i in range(0, 5)] for j in range(0,15)]
 reps = {}
 print("arr:")
 print(arr)
-
 print("repeats: ")
 for row in arr:
 	for num in row:
