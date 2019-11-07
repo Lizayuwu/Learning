@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    int r = 2;
-    int c = 2;
+    int r = 8;
+    int c = 8;
     int i;
     int j;
     int num = 0;
-    int board[2][2];
+    int board[r][c];
     for (i = 0; i < r; i++) {
         for (j = 0; j < c; j++) {
             scanf("%d", &board[i][j]);
