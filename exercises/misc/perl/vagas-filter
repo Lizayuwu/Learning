@@ -1,0 +1,12 @@
+#! /usr/bin/perl
+
+use v5.22;
+use warnings;
+
+my @vagas = ("Desenvolvedor", "Programador", "Encanador", "Construtor", "Dormente", "Desenvolve Dores", "Procrastinador", "dxx", "dc");
+
+foreach(@vagas) {
+	if(/\A[dp][^cx]+\Z/i) {
+		say;
+	}
+}
