@@ -79,8 +79,19 @@ float ex04(float num1, float num2,char operation){
     }
 }
 
+// Crie uma sub-rotina que receba como parâmetro um vetor A de 25 números inteiros
+// e substitua todos os valores negativos de A por zero. O vetor resultante deverá ser
+// mostrado no programa principal.
+
 int* ex05(int arr[25]) {
-    
+    int* positiveOnlyArr = malloc(25 * sizeof(int));
+    int i;
+    for(i = 0; i < 25; i++) {
+        if(arr[i] < 0) {
+            arr[i] = 0;
+        }
+        positiveOnlyArr[i] = arr[i];
+    }
     return positiveOnlyArr;
 }
 
@@ -88,8 +99,9 @@ int main() {
     int i,j;
     int arr[5][5] = {{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1}};
     float arrFloat[3][4] = {{1.5,3.5,1.2,7.5},{1.5,3.5,1.2,7.5},{1.5,3.5,1.2,7.5}};
-    // ex01();
-    // printf("%d\n",ex02(arr));
+    int arrPos[25] = {-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6};
+    ex01();
+    printf("%d\n",ex02(arr));
     float *floatArr = ex03(arrFloat);
 
     for(i = 0;i < 3;i++) {
@@ -98,6 +110,11 @@ int main() {
         }
     }
     printf("%f\n", ex04(2.5,3, '*'));
-
+    int posOnlyArr = ex05(arrPos);
+    for (i = 0; i < 25; i++)
+    {
+        printf("%d\n", posOnlyArr[i]);
+    }
+    
     return 0;
 }
