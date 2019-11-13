@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 // Faça uma sub-rotina que leia cinco valores inteiros, determine e mostre o maior e o
 // menor deles.
 
@@ -56,7 +57,9 @@ float* ex03(float board[3][4]) {
         for(j = 0;j < 4;j++) {
             // printf("(1+i)+j: %d\n", (i*4)+j);
             transposedArray[(i*4)+j] = board[i][j];
+//            printf("[%d]", transposedArray[(i*4)+j]);
         }
+//        printf("\n");
     }
     return transposedArray;
 }
@@ -66,17 +69,14 @@ float* ex03(float board[3][4]) {
 // números. Se o símbolo for +, deverá ser realizada uma adição, e, se for *, deverá ser
 // efetuada uma multiplicação. O resultado deverá ser mostrado no programa principal.
 
-float ex04(float num1, float num2,char operation){
-    switch(operation) {
-        case '*':
-            return num1 * num2;
-            break;
-        case '+':
-            return num1 + num2;
-            break;
-        default:
-            printf("Não suportado\n");
-    }
+float ex04(float num1, float num2,char *operation){
+    if(strcmp(operation, "*") == 0) {
+    	return num1 * num2;
+	} else if(strcmp(operation, "+") == 0) {
+    	return num1 + num2;
+	} else {
+		printf("Not supported\n");
+	}
 }
 
 // Crie uma sub-rotina que receba como parâmetro um vetor A de 25 números inteiros
@@ -96,24 +96,43 @@ int* ex05(int arr[25]) {
 }
 
 int main() {
+	int num, num2;
+	char *operandus = (char*) malloc(2);
     int i,j;
     int arr[5][5] = {{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1},{1,1,1,1,1}};
     float arrFloat[3][4] = {{1.5,3.5,1.2,7.5},{1.5,3.5,1.2,7.5},{1.5,3.5,1.2,7.5}};
     int arrPos[25] = {-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6,-1,-2,3,4,6};
+    
+    printf("ex01:\n");
     ex01();
+    
+    printf("ex02:\n");
     printf("%d\n",ex02(arr));
+    
+    printf("ex03:\n");
     float *floatArr = ex03(arrFloat);
 
     for(i = 0;i < 3;i++) {
         for(j = 0;j < 4;j++) {
-            printf("%f\n", floatArr[(i*4)+j]);
+            printf("%.3f\n", floatArr[(i*4)+j]);
         }
     }
-    printf("%f\n", ex04(2.5,3, '*'));
-    int posOnlyArr = ex05(arrPos);
+    
+    printf("ex04:\n");
+    printf("Please write a number:");
+    scanf("%d", &num);
+    printf("Please write a number:");
+    scanf("%d", &num2);
+    printf("\n\n* - Multiply\n+ - addition\n");
+    scanf("%s", operandus);
+    printf("%f\n", ex04(num, num2, operandus));
+    
+    printf("ex05:\n");
+	int *posOnlyArr = ex05(arrPos);
     for (i = 0; i < 25; i++)
     {
-        printf("%d\n", posOnlyArr[i]);
+    	if( i % 5 == 0) printf("\n");
+        printf("[%d]", posOnlyArr[i]);
     }
     
     return 0;
