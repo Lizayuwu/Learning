@@ -9,7 +9,7 @@
  ou seja,um campo calculado,então não devemos criar um atributo
  para armazenar esta informação porque ela pode ser calculada a qualquer momento.
  */
-package exercicios.Ex05;
+package exercicios.inheritance.Lista01.Ex05;
 
 /**
  *

@@ -3,7 +3,7 @@
  Atributos: tamanho do lado
  Métodos:Mudarvalordolado(setLado),retornarvalordolado(getLado) e calcular área
  */
-package exercicios.Ex02;
+package exercicios.inheritance.Lista01.Ex02;
 
 public class Quadrado {
 

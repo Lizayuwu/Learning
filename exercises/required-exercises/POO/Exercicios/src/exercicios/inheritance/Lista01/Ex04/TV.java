@@ -4,7 +4,7 @@
  Certifique-se de que o número do canal e o nível do volume permaneçam dentro de faixas válidas
 
  */
-package exercicios.Ex04;
+package exercicios.inheritance.Lista01.Ex04;
 
 /**
  *

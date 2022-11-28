@@ -4,7 +4,7 @@
  *Obs.:A cada ano que nossa pessoa envelhece, 
  *sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm
  */
-package exercicios.Ex03;
+package exercicios.inheritance.Lista01.Ex03;
 
 public class Pessoa {
 
