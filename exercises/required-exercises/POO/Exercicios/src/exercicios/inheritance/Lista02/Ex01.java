@@ -11,7 +11,7 @@ package exercicios.inheritance.Lista02;
  */
 public class Ex01 {
 
-    private int PRECISION = 10;
+    private int PRECISION = 100;
 
     public int add(int a, int b) {
         return a + b;
@@ -79,7 +79,28 @@ public class Ex01 {
     }
 
     public Double pow(Double a, Double b) {
-        return Math.pow(a, b);
+        Double intNum, decimal, tmp;
+        int magn = 10;
+
+        intNum = Double.parseDouble(String.valueOf(b).split("\\.")[0]);
+        decimal = Double.parseDouble(String.valueOf(b).split("\\.")[1]);
+
+        if (decimal == 0)
+            return this.ipow(a.intValue(), intNum.intValue());
+
+        while (true) {
+            if (decimal % magn != 0) {
+                magn *= 10;
+                decimal /= 10;
+            } else {
+                break;
+            }
+        }
+
+        tmp = newtonMethod((float) Math.abs(Math.sin(intNum)), decimal.intValue(), intNum.intValue(), this.PRECISION)
+                * this.pow(a, intNum);
+
+        return tmp;
     }
 
     public float pow(float a, float b) {
@@ -87,33 +108,25 @@ public class Ex01 {
         tmp = Double.parseDouble(Float.toString(a));
         tmp2 = Double.parseDouble(Float.toString(b));
 
-        return (float) Math.pow(a, 1 / b);
+        return new Double(Math.pow(a, b)).floatValue();
 
     }
 
-    public int root(int num, int root) {
-        return (int) Math.pow((double) num, (double) 1 / root);
+    public Double root(int num, int root) {
+        return newtonMethod(num / 2f, root, num, this.PRECISION);
     }
 
     public Double root(Double a, Double b) {
-        double intNum, decimal, tmp;
-        int magn = 10;
+        Double intNum, decimal, tmp;
+        int magn = 1;
 
         intNum = Double.parseDouble(String.valueOf(b).split("\\.")[0]);
         decimal = Double.parseDouble(String.valueOf(b).split("\\.")[1]);
 
         if (decimal == 0)
-            return this.ipow((int) intNum, (int) decimal);
+            return this.root(a.intValue(), intNum.intValue());
 
-        while (true) {
-            if (decimal % magn > 0) {
-                magn *= 10;
-            } else {
-                break;
-            }
-        }
-
-        tmp = newtonMethod((float) Math.sin(decimal), (int) decimal, (int) intNum, this.PRECISION);
+        tmp = newtonMethod(decimal.floatValue() / 2f, decimal.intValue(), intNum.intValue(), this.PRECISION);
 
         return tmp;
 
@@ -134,9 +147,16 @@ public class Ex01 {
     }
 
     private Double newtonMethod(float xn, int rootN, int num, int precision) {
-        float xk = ((rootN - 1 / rootN) * xn) + (num / rootN) * (1 / this.pow(xn, rootN - 1));
+        float tmp, tmp2, tmp3, xk;
+        float n = (float) rootN;
+        float A = (float) num;
+        tmp = ((n - 1f) / n) * xn;
+        tmp2 = A / n;
+        tmp3 = 1f / this.pow(xn, n - 1f);
 
-        if (precision > 0) {
+        xk = tmp + (tmp2 * tmp3);
+
+        if (precision > 0 && xk != xn) {
             precision = precision - 1;
             return this.newtonMethod(xk, rootN, num, precision);
         }

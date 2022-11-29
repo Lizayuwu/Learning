@@ -13,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         Ex01 calc = new Ex01();
-        System.out.println(calc.root(2d, 2.5d));
+        System.out.println(calc.pow(2d, 3.1));
+        // System.out.println(calc.root(5d, 34d));
     }
 }
